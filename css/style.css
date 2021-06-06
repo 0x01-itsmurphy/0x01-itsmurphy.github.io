@@ -1,0 +1,378 @@
+/* ----------------
+    Fonts   
+-------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+
+/* ----------------
+    Variables   
+-------------------- */
+:root {
+    --main-color: #e02f6b;
+    --blue: #0000ff;
+    --blue-dark: #18292c;
+    --orange: #ffa500;
+    --green-yellow: #cddc39;
+    --pink-light: #efa2b4;
+    --cyan-light: #aef1ee;
+    --white: #ffffff;
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+    --backdrop-filter-blur: blur(5px);
+}
+
+
+
+/* ----------------
+    Global Setting  
+-------------------- */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light)); 
+    /*background: linear-gradient(to right, #6f7a81, #2f3336); */
+    /* background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); */
+    /* background-image: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%); */
+    /* background: linear-gradient(to right, #000000, #434343); */
+    /* background-image: radial-gradient(circle at 29% 55%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 4%,transparent 4%, transparent 44%,transparent 44%, transparent 100%),
+    radial-gradient(circle at 85% 89%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 52%,transparent 52%, transparent 100%),
+    radial-gradient(circle at 6% 90%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 53%,transparent 53%, transparent 64%,transparent 64%, transparent 100%),
+    radial-gradient(circle at 35% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 6%,transparent 6%, transparent 98%,transparent 98%, transparent 100%),
+    radial-gradient(circle at 56% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 16%,transparent 16%, transparent 23%,transparent 23%, transparent 100%),
+    radial-gradient(circle at 42% 0%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 3%,transparent 3%, transparent 26%,transparent 26%, transparent 100%),
+    radial-gradient(circle at 29% 28%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 75%,transparent 75%, transparent 100%),
+    radial-gradient(circle at 77% 21%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 35%,transparent 35%, transparent 55%,transparent 55%, transparent 100%),
+    radial-gradient(circle at 65% 91%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 46%,transparent 46%, transparent 76%,transparent 76%, transparent 100%),
+    linear-gradient(45deg, rgb(83, 91, 235),rgb(76, 11, 174)
+    ); */
+    /* background-image: linear-gradient(225deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(180deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(315deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(270deg, rgb(79, 35, 157), rgb(43, 171, 222));
+    background-blend-mode: overlay, overlay, overlay, normal; */
+
+    background-attachment: fixed;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-weight: 300;
+    color: var(--blue-dark);
+    line-height: 1.5;
+    overflow: auto;
+    -webkit-top-highlight-color: transparent;
+    padding: 5vh 15px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--green-yellow);
+    z-index: -1;
+    opacity: 0.12;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+section {
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    min-height: 90vh;
+    border-radius: 30px;
+    backdrop-filter: var(--backdrop-filter-blur);
+
+}
+
+
+.main {
+    /* background-color:red; */
+    max-width: 1300px;
+    margin: auto;
+
+}
+
+.container {
+    /* background-color: red; */
+    padding: 0 40px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.hidden{
+    display: none !important;
+}
+
+
+.sec-padding{
+    padding: 80px 0;
+}
+/* ------------------------------------------------
+    Section Title  
+-------------------- */
+.section-title{
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section-title h2{
+    font-size: 40px;
+    text-transform: capitalize;
+}
+
+
+/* -------------------
+    Custom Scrollbar  
+-------------------- */
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+/* ----------------
+    Buttons  
+-------------------- */
+.btn {
+    line-height: 1.5;
+    background-color: var(--white-alpha-25);
+    padding: 10px;
+    display: inline-block;
+    border-radius: 30px;
+    border: 1px solid var(--white-alpha-40);
+    color: var(--main-color);
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.btn:hover::before{
+    width: 100%;
+}
+.btn:hover{
+    color: var(--white);
+}
+
+
+
+
+/* ------------------------------------------------
+    Home Section  
+-------------------- */
+
+.home-section {
+    display: flex;
+    padding: 120px 0;
+}
+
+
+
+/* 
+.home-text{
+    background-color: blue;
+}
+
+.home-img{
+    background-color: green;
+}
+*/
+
+.home-text,
+.home-img {
+    padding: 15px;
+    width: 50%;
+}
+
+.home-text p {
+    font-size: 25px;
+}
+
+.home-text h1 {
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+.home-text h2 {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 0 30px;
+}
+.home-text .btn{
+    margin: 0 15px 15px 0;
+}
+
+.home-img .img-box {
+    max-width: 350px;
+    background-color: var(--white-alpha-25);
+    border-radius: 50%;
+    border: 5px solid var(--white-alpha-25);
+    margin: auto;
+}
+
+.home-img .img-box img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* ------------------------------------------------
+    About Section  
+-------------------- */
+.about-img{
+    
+    width: 40%;
+    padding: 0 25px;
+}
+
+.about-text{
+    
+    width: 60%;
+    padding: 0 15px;
+}
+
+.about-img .img-box{
+    background-color: var(--white-alpha-25);
+    max-width: 395px;
+    border: 1px solid var(--white-alpha-40);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.about-img .img-box img{
+    width: 100%;
+}
+
+.about-text h3{
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.about-text .skills{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-text .skill-item{
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    padding: 5px 15px;
+    text-transform: capitalize;
+    margin: 0 10px 10px 0;
+    border-radius: 20px;
+}
+
+.about-tabs{
+    margin-top: 20px;
+}
+
+.about-tabs .tab-item{
+    padding: 2px 0;
+    border: none;
+    background-color: transparent;
+    text-transform: capitalize;
+    display: inline-block;
+    color: var(--blue-dark);
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 30px 0 0;
+    position: relative;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.about-tabs .tab-item:last-child{
+    margin: 0;
+}
+
+.about-tabs .tab-item::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    height: 1px;
+    background-color: var(--blue-dark);
+    transition: width 0.3s ease;
+}
+
+.about-tabs .tab-item:hover::before{
+    width: 100%;
+
+}
+
+.about-tabs .tab-item.active::before{
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.about-tabs .tab-item.active{
+    color: var(--main-color);
+    opacity: 1;
+    cursor: auto;
+}
