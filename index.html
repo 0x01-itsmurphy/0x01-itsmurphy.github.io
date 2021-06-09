@@ -12,19 +12,54 @@
 
 <body>
 
+    <!-- Background Circles Start -->
+    <div class="bg-circles">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+        <div class="circle-4"></div>
+    </div>
+    <!-- Background Circles End -->
+
+    <!-- Overlay Start -->
+    <div class="overlay"></div>
+    <!-- Overlay End -->
+
     <!-- Main Start -->
     <div class="main">
 
+        <!-- Header Section Start -->
+        <header class="header">
+            <div class="container">
+                <div class="row flex-end">
+                    <button type="button" class="nav-toggler">
+                        <span></span>
+                    </button>
+                    <nav class="nav">
+                        <div class="nav-inner">
+                            <ul>
+                                <li><a href="#home" class="nav-item link-item">home</a></li>
+                                <li><a href="#about" class="nav-item link-item">about</a></li>
+                                <li><a href="#portfolio" class="nav-item link-item">portfolio</a></li>
+                                <li><a href="#contact" class="nav-item link-item">contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End -->
+
         <!-- Home Section Start -->
-        <section class="home-section align-items-center hidden">
+        <section class="home-section align-items-center active" id="home">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="home-text">
                         <p>Hello I'm</p>
                         <h1>Manish Kumar</h1>
                         <h2>Android and Web Developer</h2>
-                        <a href="#" class="btn">resume</a>
-                        <a href="#" class="btn">portfolio</a>
+                        <a href="#about" class="btn link-item">more about me</a>
+                        <a href="#portfolio" class="btn link-item">portfolio</a>
                     </div>
                     <div class="home-img">
                         <div class="img-box">
@@ -38,7 +73,7 @@
 
 
         <!-- About Section Start -->
-        <section class="about-section sec-padding hidden">
+        <section class="about-section sec-padding" id="about">
             <div class="container">
                 <div class="row">
                     <div class="section-title">
@@ -129,8 +164,8 @@
                             </div>
                         </div>
                         <!-- Experience End -->
-                        <a href="#" class="btn">download cv</a>
-                        <a href="#" class="btn">contact me</a>
+                        <a href="Resume.pdf" target="_blank" class="btn">Resume</a>
+                        <a href="#contact" class="btn link-item">contact me</a>
                     </div>
                 </div>
             </div>
@@ -139,7 +174,7 @@
 
 
         <!-- Portfolio Section Start -->
-        <section class="portfolio-section sec-padding hidden">
+        <section class="portfolio-section sec-padding" id="portfolio">
             <div class="container">
                 <div class="row">
                     <div class="section-title">
@@ -309,7 +344,7 @@
 
 
         <!--  Contact Section Start  -->
-        <section class="contact-section sec-padding">
+        <section class="contact-section sec-padding" id="contact">
             <div class="container">
                 <div class="row">
                     <div class="section-title">
