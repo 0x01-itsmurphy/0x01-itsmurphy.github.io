@@ -1,4 +1,3 @@
-
 window.addEventListener("load", () => {
     document.querySelector(".main").classList.remove("hidden");
     document.querySelector(".home-section").classList.add("active");
@@ -6,7 +5,7 @@ window.addEventListener("load", () => {
     document.querySelector(".page-loader").classList.add("fade-out");
     setTimeout(() => {
         document.querySelector(".page-loader").style.display = "none";
-    },600);
+    }, 600);
 });
 
 /*------------------------------------- Toggle Navbar ---------------------------------*/
@@ -97,4 +96,22 @@ function portfolioItemDetails(portfolioItem) {
 
     document.querySelector(".pp-body").innerHTML =
         portfolioItem.querySelector(".portfolio-item-details").innerHTML;
+}
+
+
+
+// Send Email via emailJS
+
+function sendMail(params) {
+    var tempParams = {
+        from_name: document.getElementById("from_name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("msg").value,
+    };
+    emailjs.send('service_ybgg24b', 'template_yggi3lu', tempParams)
+        .then(function (res) {
+            console.log("succes", res.status);
+            alert("Mail Send Successfully")
+        })
 }
