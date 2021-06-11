@@ -9,7 +9,8 @@
     Variables   
 -------------------- */
 :root {
-    --main-color: #e02f6b;
+    /* --main-color: #e02f6b; */
+    --main-color: #bb0606;
     --blue: #0000ff;
     --blue-dark: #18292c;
     --orange: #ffa500;
@@ -42,24 +43,16 @@
 
 body {
     min-height: 100vh;
-    background-image: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light));
-    /*background: linear-gradient(to right, #6f7a81, #2f3336); */
+    /* background-image: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light)); */
+    /* background: linear-gradient(to right, #6f7a81, #2f3336); */
     /* background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff); */
     /* background-image: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%); */
     /* background: linear-gradient(to right, #000000, #434343); */
-    /* background-image: radial-gradient(circle at 29% 55%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 4%,transparent 4%, transparent 44%,transparent 44%, transparent 100%),
-    radial-gradient(circle at 85% 89%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 52%,transparent 52%, transparent 100%),
-    radial-gradient(circle at 6% 90%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 53%,transparent 53%, transparent 64%,transparent 64%, transparent 100%),
-    radial-gradient(circle at 35% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 6%,transparent 6%, transparent 98%,transparent 98%, transparent 100%),
-    radial-gradient(circle at 56% 75%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 16%,transparent 16%, transparent 23%,transparent 23%, transparent 100%),
-    radial-gradient(circle at 42% 0%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 3%,transparent 3%, transparent 26%,transparent 26%, transparent 100%),
-    radial-gradient(circle at 29% 28%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 51%,transparent 51%, transparent 75%,transparent 75%, transparent 100%),
-    radial-gradient(circle at 77% 21%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 35%,transparent 35%, transparent 55%,transparent 55%, transparent 100%),
-    radial-gradient(circle at 65% 91%, hsla(329,0%,99%,0.05) 0%, hsla(329,0%,99%,0.05) 46%,transparent 46%, transparent 76%,transparent 76%, transparent 100%),
-    linear-gradient(45deg, rgb(83, 91, 235),rgb(76, 11, 174)
-    ); */
     /* background-image: linear-gradient(225deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(180deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(315deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(270deg, rgb(79, 35, 157), rgb(43, 171, 222));
     background-blend-mode: overlay, overlay, overlay, normal; */
+    background-color: #5b6467;
+background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+
 
     background-attachment: fixed;
     font-size: 16px;
@@ -307,6 +300,15 @@ section.fade-out {
     }
   }
 
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 
 /* ------------ Background Circles ------------- */
 .bg-circles {
@@ -317,7 +319,6 @@ section.fade-out {
     width: calc(100% - 30px);
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
 }
 
 .bg-circles div {
@@ -381,6 +382,56 @@ section.fade-out {
 }
 
 
+/* ------------------------------------------------
+    Page Loader  
+-------------------- */
+.page-loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter-blur);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease;
+}
+
+.page-loader.fade-out{
+    opacity: 0;
+}
+
+.page-loader div{
+    border: 3px solid transparent;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+    animation: spin 1s linear infinite;
+}
+
+.page-loader div:nth-child(1){
+    height: 60px;
+    width: 60px;
+    border-color: var(--main-color);
+}
+
+.page-loader div:nth-child(2){
+    height: 45px;
+    width: 45px;
+    border-color: var(--blue);
+    animation-duration: 1.2s;
+}
+
+.page-loader div:nth-child(3){
+    height: 30px;
+    width: 30px;
+    border-color: var(--orange);
+}
 
 /* ------------------------------------------------
     Header Section  
@@ -977,4 +1028,74 @@ section.fade-out {
 .contact-info-item .social-media a:hover {
     color: var(--white);
     background-color: var(--main-color);
+}
+
+
+/* ------------------------------------------------
+    Responsive  
+-------------------- */
+@media(max-width:991px){
+    .container{
+        padding: 0;
+    }
+    .home-text,
+    .home-img{
+        width: 100%;
+    }
+    .home-text{
+        text-align: center;
+    }
+    .home-img{
+        order: -1;
+    }
+    .home-img .img-box{
+        max-width: 300px;
+    }
+    .home-text .btn{
+        margin: 0 7px 15px;
+    }
+    .portfolio-item{
+        width: calc(50% - 30px);
+    }
+}
+
+@media(max-width:767px){
+    .contact-form, 
+    .contact-info,
+    .about-img,
+    .about-text{
+        width: 100%;
+    }
+    .about-text{
+        margin-top: 30px;
+    }
+    .portfolio-item{
+        width: calc(100% - 30px);
+    }
+    .pp-inner{
+        padding: 30px 15px;
+    }
+    .contact-info{
+        order: -1;
+        margin-bottom: 15px;
+    }
+    .contact-info-item{
+        padding: 0;
+    }
+}
+
+@media(max-width:575px){
+    .section-title h2,
+    .header .nav-inner ul li a{
+        font-size: 35px;
+    }
+    .home-text h1{
+        font-size: 30px;
+    }
+    .home-text h2{
+        font-size: 18px;
+    }
+    .pp-header h3{
+        font-size: 20px;
+    }
 }
