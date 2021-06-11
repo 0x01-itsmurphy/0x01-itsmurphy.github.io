@@ -51,7 +51,7 @@ body {
     /* background-image: linear-gradient(225deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(180deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(315deg, rgb(144, 100, 159) 0%, rgb(144, 100, 159) 24%, rgb(112, 112, 163) 24%, rgb(112, 112, 163) 28%, rgb(79, 124, 166) 28%, rgb(79, 124, 166) 40%, rgb(47, 136, 170) 40%, rgb(47, 136, 170) 84%, rgb(14, 148, 173) 84%, rgb(14, 148, 173) 100%), linear-gradient(270deg, rgb(79, 35, 157), rgb(43, 171, 222));
     background-blend-mode: overlay, overlay, overlay, normal; */
     background-color: #5b6467;
-background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+    background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
 
 
     background-attachment: fixed;
@@ -291,20 +291,22 @@ section.fade-out {
 
 @keyframes scaleIn {
     from {
-      transform: scale(.5, .5);
-      opacity: .5;
+        transform: scale(.5, .5);
+        opacity: .5;
     }
+
     to {
-      transform: scale(2.5, 2.5);
-      opacity: 0;
+        transform: scale(2.5, 2.5);
+        opacity: 0;
     }
-  }
+}
 
 @keyframes spin {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -351,7 +353,7 @@ section.fade-out {
     width: 120px;
     background-color: var(--white);
     top: 40%;
-    right: -60px;    
+    right: -60px;
     opacity: 0.6;
     animation: scaleIn 4s infinite cubic-bezier(.36, .11, .89, .32);
 }
@@ -385,7 +387,7 @@ section.fade-out {
 /* ------------------------------------------------
     Page Loader  
 -------------------- */
-.page-loader{
+.page-loader {
     position: fixed;
     top: 0;
     left: 0;
@@ -400,11 +402,11 @@ section.fade-out {
     transition: opacity 0.6s ease;
 }
 
-.page-loader.fade-out{
+.page-loader.fade-out {
     opacity: 0;
 }
 
-.page-loader div{
+.page-loader div {
     border: 3px solid transparent;
     position: absolute;
     border-radius: 50%;
@@ -414,20 +416,20 @@ section.fade-out {
     animation: spin 1s linear infinite;
 }
 
-.page-loader div:nth-child(1){
+.page-loader div:nth-child(1) {
     height: 60px;
     width: 60px;
     border-color: var(--main-color);
 }
 
-.page-loader div:nth-child(2){
+.page-loader div:nth-child(2) {
     height: 45px;
     width: 45px;
     border-color: var(--blue);
     animation-duration: 1.2s;
 }
 
-.page-loader div:nth-child(3){
+.page-loader div:nth-child(3) {
     height: 30px;
     width: 30px;
     border-color: var(--orange);
@@ -1034,68 +1036,84 @@ section.fade-out {
 /* ------------------------------------------------
     Responsive  
 -------------------- */
-@media(max-width:991px){
-    .container{
+@media(max-width:991px) {
+    .container {
         padding: 0;
     }
+
     .home-text,
-    .home-img{
+    .home-img {
         width: 100%;
     }
-    .home-text{
+
+    .home-text {
         text-align: center;
     }
-    .home-img{
+
+    .home-img {
         order: -1;
     }
-    .home-img .img-box{
+
+    .home-img .img-box {
         max-width: 300px;
     }
-    .home-text .btn{
+
+    .home-text .btn {
         margin: 0 7px 15px;
     }
-    .portfolio-item{
+
+    .portfolio-item {
         width: calc(50% - 30px);
     }
 }
 
-@media(max-width:767px){
-    .contact-form, 
+@media(max-width:767px) {
+
+    .contact-form,
     .contact-info,
     .about-img,
-    .about-text{
+    .about-text {
         width: 100%;
     }
-    .about-text{
+
+    .about-text {
         margin-top: 30px;
     }
-    .portfolio-item{
+
+    .portfolio-item {
         width: calc(100% - 30px);
     }
-    .pp-inner{
+
+    .pp-inner {
         padding: 30px 15px;
     }
-    .contact-info{
+
+    .contact-info {
         order: -1;
         margin-bottom: 15px;
     }
-    .contact-info-item{
+
+    .contact-info-item {
         padding: 0;
     }
 }
 
-@media(max-width:575px){
+@media(max-width:575px) {
+
     .section-title h2,
-    .header .nav-inner ul li a{
+    .header .nav-inner ul li a {
         font-size: 35px;
     }
-    .home-text h1{
+
+    .home-text h1 {
         font-size: 30px;
     }
-    .home-text h2{
+
+    .home-text h2 {
         font-size: 18px;
     }
-    .pp-header h3{
+
+    .pp-header h3 {
         font-size: 20px;
     }
 }
