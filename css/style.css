@@ -62,7 +62,7 @@ body {
     color: var(--blue-dark);
     line-height: 1.5;
     overflow: auto;
-    -webkit-top-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     padding: 35px 15px;
 }
 
